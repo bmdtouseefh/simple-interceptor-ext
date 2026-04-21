@@ -24,7 +24,7 @@ https://github.com/user-attachments/assets/5c0ee6fb-236f-48d3-89f4-f3ea0bf1f8b5
 1. Open Chrome and navigate to `chrome://extensions/`
 2. Enable **Developer mode** (toggle in top right)
 3. Click **Load unpacked**
-4. Select the `si-extension` folder
+4. Select the `simple-interceptor-ext` folder
 
 ## Usage
 
