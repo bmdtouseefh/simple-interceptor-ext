@@ -17,6 +17,8 @@ A browser extension that automatically redacts sensitive data (PII, credentials,
 - **Bearer tokens**
 - **IP addresses** (IPv4 and IPv6)
 
+https://github.com/user-attachments/assets/5c0ee6fb-236f-48d3-89f4-f3ea0bf1f8b5
+
 ## Installation
 
 1. Open Chrome and navigate to `chrome://extensions/`
