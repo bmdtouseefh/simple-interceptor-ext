@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 300px;
+        background-color: #0c0a09;
+        color: #fafaf9;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        margin: 0;
+        padding: 16px;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #292524;
+        padding-bottom: 10px;
+      }
+      .status-badge {
+        font-size: 10px;
+        background: #1c1917;
+        color: #10b981;
+        padding: 2px 8px;
+        border-radius: 99px;
+        border: 1px solid #064e3b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .status-inactive {
+        background: #7f1d1d;
+        color: #fca5a5;
+        border-color: #7f1d1d;
+      }
+      .counter-card {
+        background: linear-gradient(145deg, #1c1917, #0c0a09);
+        border: 1px solid #292524;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      #total-counter {
+        font-size: 32px;
+        font-weight: 800;
+        color: #3b82f6;
+        display: block;
+      }
+      .label {
+        font-size: 12px;
+        color: #a8a29e;
+      }
+      .toggle-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+      .toggle-label {
+        font-size: 13px;
+      }
+      .toggle-switch {
+        position: relative;
+        width: 40px;
+        height: 22px;
+      }
+      .toggle-switch input {
+        display: none;
+      }
+      .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: #292524;
+        border-radius: 22px;
+        transition: 0.2s;
+      }
+      .toggle-slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        bottom: 3px;
+        background: #57534e;
+        border-radius: 50%;
+        transition: 0.2s;
+      }
+      .toggle-switch input:checked + .toggle-slider {
+        background: #10b981;
+      }
+      .toggle-switch input:checked + .toggle-slider:before {
+        transform: translateX(18px);
+        background: #fff;
+      }
+      .log-container {
+        max-height: 150px;
+        overflow-y: auto;
+      }
+      .log-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        padding: 6px 0;
+        border-bottom: 1px solid #1c1917;
+      }
+      .category-tag {
+        color: #60a5fa;
+      }
+      .time-tag {
+        color: #57534e;
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0c0a09;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #292524;
+        border-radius: 10px;
+      }
+      .footer {
+        margin-top: 12px;
+        text-align: center;
+      }
+      .options-link {
+        font-size: 11px;
+        color: #57534e;
+        text-decoration: none;
+      }
+      .options-link:hover {
+        color: #a8a29e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <span style="font-weight: 700; font-size: 14px">Intercept AI</span>
+      <span id="status-badge" class="status-badge">Active</span>
+    </div>
+
+    <div class="toggle-row">
+      <span class="toggle-label">Protection</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="enable-toggle" checked />
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="counter-card">
+      <span id="total-counter">0</span>
+      <span class="label">Total PII Leaks Blocked</span>
+    </div>
+
+    <div class="label" style="margin-bottom: 8px">RECENT ACTIVITY</div>
+    <div id="log-list" class="log-container">
+      <div class="log-item" style="color: #57534e; justify-content: center">
+        No activity detected yet
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="#" class="options-link" id="options-link">Settings</a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
