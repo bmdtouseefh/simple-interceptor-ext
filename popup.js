@@ -44,7 +44,7 @@ function updateUI() {
 }
 
 document.addEventListener("DOMContentLoaded", updateUI);
-chrome.storage.onChanged.addListener(updateUI);
+chrome.storage.onChanged.addListener(() => updateUI());
 
 document.getElementById("enable-toggle").addEventListener("change", (e) => {
   const enabled = e.target.checked;
@@ -52,7 +52,3 @@ document.getElementById("enable-toggle").addEventListener("change", (e) => {
   updateUI();
 });
 
-document.getElementById("options-link").addEventListener("click", (e) => {
-  e.preventDefault();
-  chrome.runtime.openOptionsPage();
-});
